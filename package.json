@@ -12,6 +12,6 @@
     "wdio-html-nice-reporter": "^8.1.6"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
+    "wdio": "wdio run wdio.conf.ts"
   }
 }
