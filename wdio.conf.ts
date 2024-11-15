@@ -6,7 +6,12 @@ export const config: WebdriverIO.Config = {
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
     tsConfigPath: './tsconfig.json',
-    
+
+    port: 9515, // default for ChromeDriver
+    path: '/',
+    // ...
+    services: ['chromedriver'],
+
     //
     // ==================
     // Specify Test Files
@@ -52,7 +57,12 @@ export const config: WebdriverIO.Config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'safari'
+        browserName: 'chrome',
+        'goog:chromeOptions': 
+        {
+
+        }
+        
     }],
 
     //
@@ -130,7 +140,7 @@ export const config: WebdriverIO.Config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/steps.ts'],
+        require: ['./features/step-definitions/*.solic.ts'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
